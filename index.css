@@ -1,26 +1,33 @@
-/* 全体の背景と文字 */
 body {
   font-family: sans-serif;
   background-color: #f0f8ff;
+  margin: 0;
   padding: 20px;
 }
 
-/* タイトルの色 */
-h1, h2 {
+/* 全体見出し */
+h1 {
   color: #0077aa;
+  text-align: center;
 }
 
-/* 入力ボックスを囲む */
+/* 左右レイアウトにする */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* 入力フォームの見た目 */
 .form-box {
   background: white;
-  padding: 15px;
+  padding: 20px;
   border-radius: 10px;
   max-width: 400px;
+  flex: 1;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
 }
 
-/* ラベルと入力欄の調整 */
 label {
   display: block;
   margin-top: 10px;
@@ -33,7 +40,6 @@ input, select {
   box-sizing: border-box;
 }
 
-/* ボタンの見た目 */
 button {
   margin-top: 15px;
   padding: 10px 15px;
@@ -48,9 +54,52 @@ button:hover {
   background-color: #007799;
 }
 
-/* メニューリスト */
+.reset-btn {
+  background-color: #d9534f;
+  margin-left: 10px;
+}
+
+.menu-display {
+  flex: 1;
+  min-width: 300px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: #0077aa;
+}
+
+/* メニューリストの見た目 */
 ul {
   list-style: none;
   padding-left: 0;
 }
+
+li {
+  background: #e8f6ff;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 削除ボタン */
+li button {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: #cc4444;
+}
+
 

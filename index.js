@@ -1,30 +1,37 @@
-// メニューを追加する関数
+// メニュー追加関数
 function addMenu() {
-  // 入力された情報を取得
   const category = document.getElementById("category").value;
   const menuName = document.getElementById("menuName").value.trim();
   const menuCount = document.getElementById("menuCount").value.trim();
 
-  // 入力が空だったら警告を出す
   if (menuName === "" || menuCount === "") {
     alert("メニュー名と回数（距離）を入力してください。");
     return;
   }
 
-  // 表示用のリストに追加
   const menuList = document.getElementById("menuList");
+
+  // 新しいリスト要素を作成
   const listItem = document.createElement("li");
-  listItem.textContent = `[${category}] ${menuName} × ${menuCount}`;
+  listItem.innerHTML = `<span>[${category}] ${menuName} × ${menuCount}</span>
+                        <button onclick="removeMenu(this)">削除</button>`;
+
   menuList.appendChild(listItem);
 
-  // 入力欄をクリア
+  // 入力をリセット
   document.getElementById("menuName").value = "";
   document.getElementById("menuCount").value = "";
 }
 
-// メニューを全部消す関数
-function resetMenu() {
-  const menuList = document.getElementById("menuList");
-  menuList.innerHTML = "";  // 中身を空にする
+// 個別に削除する関数
+function removeMenu(button) {
+  const item = button.parentElement;
+  item.remove();
 }
+
+// 全削除
+function resetMenu() {
+  document.getElementById("menuList").innerHTML = "";
+}
+
 

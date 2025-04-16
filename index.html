@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>水泳メニュー作成アプリ</title>
-  <!-- デザインを読み込み -->
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <h1>水泳メニューを作ってみよう！</h1>
 
-  <!-- 入力フォーム（カテゴリ、メニュー名、回数） -->
-  <div class="form-box">
-    <label for="category">カテゴリを選ぶ：</label>
-    <select id="category">
-      <option value="ウォーミングアップ">ウォーミングアップ</option>
-      <option value="ドリル">ドリル</option>
-      <option value="メイン">メイン</option>
-      <option value="ダウン">ダウン</option>
-    </select>
+  <!-- 全体のレイアウトを左右に分ける -->
+  <div class="container">
+    <!-- 左側：フォーム入力 -->
+    <div class="form-box">
+      <label for="category">カテゴリを選ぶ：</label>
+      <select id="category">
+        <option value="ウォーミングアップ">ウォーミングアップ</option>
+        <option value="ドリル">ドリル</option>
+        <option value="メイン">メイン</option>
+        <option value="ダウン">ダウン</option>
+      </select>
 
-    <label for="menuName">メニュー名：</label>
-    <input type="text" id="menuName" placeholder="例：50m クロール">
+      <label for="menuName">メニュー名：</label>
+      <input type="text" id="menuName" placeholder="例：50m クロール" />
 
-    <label for="menuCount">回数や距離：</label>
-    <input type="text" id="menuCount" placeholder="例：4本、200m など">
+      <label for="menuCount">回数や距離：</label>
+      <input type="text" id="menuCount" placeholder="例：4本、200m など" />
 
-    <!-- メニュー追加ボタン -->
-    <button onclick="addMenu()">メニューを追加</button>
+      <button onclick="addMenu()">メニューを追加</button>
+      <button class="reset-btn" onclick="resetMenu()">すべてリセット</button>
+    </div>
+
+    <!-- 右側：メニュー表示 -->
+    <div class="menu-display">
+      <h2>今日の練習メニュー</h2>
+      <ul id="menuList"></ul>
+    </div>
   </div>
 
-  <hr>
-
-  <!-- 作成されたメニュー一覧 -->
-  <h2>今日の練習メニュー</h2>
-  <ul id="menuList"></ul>
-
-  <!-- 全メニュー削除ボタン -->
-  <button onclick="resetMenu()">すべてリセット</button>
-
-  <!-- ボタンの動作を書くJavaScriptを読み込み -->
-  <script src="index.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
 
