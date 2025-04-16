@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>水泳メニュー作成アプリ</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    すいみんぐ教室
-    <div class="container">
-        <div class="card">
-            <h2>すいみんぐ教室</h2>
-            <p>すいみんぐ教室の内容がここに入ります。</p>
-        </div>
-        <div class="card">
-            <h2>すいみんぐ教室</h2>
-            <p>すいみんぐ教室の内容がここに入ります。</p>
-        </div>
-        <div class="card">
-            <h2>すいみんぐ教室</h2>
-            <p>すいみんぐ教室の内容がここに入ります。</p>
-        </div>
-        <button class="button" onclick="ShowAlert()">
-            アラート
-        </button>
-        <script src="index.js"></script>
+  <h1>水泳メニュー作成</h1>
+
+  <div class="section">
+    <h2>ウォーミングアップ</h2>
+    <button onclick="addMenu('ウォーミングアップ', '200m フリー')">200m フリー</button>
+    <button onclick="addMenu('ウォーミングアップ', '4×50m キック')">4×50m キック</button>
+  </div>
+
+  <div class="section">
+    <h2>ドリル</h2>
+    <button onclick="addMenu('ドリル', 'スカーリング 3種')">スカーリング 3種</button>
+    <button onclick="addMenu('ドリル', '片手バタフライ')">片手バタフライ</button>
+  </div>
+
+  <div class="section">
+    <h2>メイン</h2>
+    <button onclick="addMenu('メイン', '8×100m IM')">8×100m IM</button>
+    <button onclick="addMenu('メイン', '10×50m ダッシュ')">10×50m ダッシュ</button>
+  </div>
+
+  <div class="section">
+    <h2>ダウン</h2>
+    <button onclick="addMenu('ダウン', '100m ゆっくり')">100m ゆっくり</button>
+    <button onclick="addMenu('ダウン', '50m × 2 背泳ぎ')">50m × 2 背泳ぎ</button>
+  </div>
+
+  <hr>
+
+  <h2>今日のメニュー</h2>
+  <ul id="menuList"></ul>
+
+  <button onclick="resetMenu()">リセット</button>
+
+  <script src="script.js"></script>
 </body>
 </html>
